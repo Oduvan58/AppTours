@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_background_main"
+    tools:context=".view.home.SearchToursActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/main_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/padding_16dp"
+        android:layout_marginBottom="@dimen/padding_16dp"
+        android:background="@color/color_background_main">
+
+        <TextView
+            android:id="@+id/main_title_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/padding_16dp"
+            android:layout_marginTop="@dimen/padding_16dp"
+            android:fontFamily="@font/manrope_bold"
+            android:text="@string/text_title_main"
+            android:textColor="@color/text_color_main_title"
+            android:textSize="@dimen/text_size_main_title"
+            app:layout_constraintStart_toStartOf="@id/main_container"
+            app:layout_constraintTop_toTopOf="@id/main_container" />
+
+        <EditText
+            android:id="@+id/input_from_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_edit_text"
+            android:layout_marginStart="@dimen/padding_16dp"
+            android:layout_marginTop="@dimen/margin_32dp"
+            android:layout_marginEnd="@dimen/padding_16dp"
+            android:background="@drawable/from_edit_text"
+            android:fontFamily="@font/manrope"
+            android:hint="@string/text_hint_from_edit_text"
+            android:paddingStart="@dimen/padding_16dp"
+            android:textColor="@color/text_color_main_title"
+            android:textColorHint="@color/background_edit_text"
+            android:textSize="@dimen/text_size_hint_edit_text"
+            app:layout_constraintStart_toStartOf="@id/main_title_text_view"
+            app:layout_constraintTop_toBottomOf="@id/main_title_text_view" />
+
+        <EditText
+            android:id="@+id/input_to_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_edit_text"
+            android:layout_marginStart="@dimen/padding_16dp"
+            android:layout_marginTop="@dimen/margin_2dp"
+            android:layout_marginEnd="@dimen/padding_16dp"
+            android:background="@drawable/to_edit_text"
+            android:fontFamily="@font/manrope"
+            android:hint="@string/text_hint_to_edit_text"
+            android:paddingStart="@dimen/padding_16dp"
+            android:textColor="@color/text_color_main_title"
+            android:textColorHint="@color/background_edit_text"
+            android:textSize="@dimen/text_size_hint_edit_text"
+            app:layout_constraintStart_toStartOf="@id/input_from_edit_text"
+            app:layout_constraintTop_toBottomOf="@id/input_from_edit_text" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/search_button"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_search_button"
+            android:layout_margin="@dimen/padding_16dp"
+            android:backgroundTint="@color/color_background_search_button"
+            android:fontFamily="@font/manrope"
+            android:text="@string/text_search_button"
+            android:textSize="@dimen/text_size_search_button"
+            android:textStyle="bold"
+            app:cornerRadius="@dimen/corner_search_button"
+            app:layout_constraintBottom_toBottomOf="@id/main_container"
+            app:layout_constraintEnd_toEndOf="@id/main_container"
+            app:layout_constraintStart_toStartOf="@id/main_container" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

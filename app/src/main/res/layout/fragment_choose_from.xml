@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <EditText
+        android:id="@+id/input_choose_from_edit_text"
+        android:layout_width="@dimen/width_choose_edit_text"
+        android:layout_height="@dimen/height_choose_edit_text"
+        android:layout_margin="@dimen/padding_16dp"
+        android:background="@drawable/choose_from_edit_text"
+        android:fontFamily="@font/manrope"
+        android:hint="@string/hint_choose_from_edit_text"
+        android:paddingStart="@dimen/padding_16dp"
+        android:textColor="@color/text_color_main_title"
+        android:textColorHint="@color/background_edit_text"
+        android:textSize="@dimen/text_size_hint_edit_text"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/close_choose_from_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/manrope"
+        android:text="@string/text_close_choose_from_text_view"
+        android:textColor="@color/color_close_text_view"
+        android:textSize="@dimen/text_size_close_text_view"
+        app:layout_constraintBottom_toBottomOf="@id/input_choose_from_edit_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/input_choose_from_edit_text"
+        app:layout_constraintTop_toTopOf="@id/input_choose_from_edit_text" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/list_choose_from_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/input_choose_from_edit_text"
+        tools:listitem="@layout/item_choose_from" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ProgressBar
+            android:id="@+id/progress_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center" />
+
+    </FrameLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

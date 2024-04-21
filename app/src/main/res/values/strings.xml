@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">AppTours</string>
+    <string name="text_title_main">Поиск туров</string>
+    <string name="text_search_button">Найти тур</string>
+    <string name="text_hint_to_edit_text">Куда</string>
+    <string name="text_hint_from_edit_text">Откуда</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="hint_choose_from_edit_text">Город вылета</string>
+    <string name="text_close_choose_from_text_view">Закрыть</string>
+    <string name="text_hint_choose_to_edit_text">Страна, курорт, отель</string>
+    <string name="title_header_choose_to_text_view">Популярные направления</string>
+</resources>

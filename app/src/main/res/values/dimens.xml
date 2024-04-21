@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="padding_16dp">16dp</dimen>
+    <dimen name="height_search_button">56dp</dimen>
+    <dimen name="corner_search_button">18dp</dimen>
+    <dimen name="text_size_search_button">16sp</dimen>
+    <dimen name="text_size_hint_edit_text">16sp</dimen>
+    <dimen name="margin_2dp">2dp</dimen>
+    <dimen name="height_edit_text">56dp</dimen>
+    <dimen name="margin_32dp">32dp</dimen>
+    <dimen name="text_size_main_title">24sp</dimen>
+    <dimen name="width_choose_edit_text">258dp</dimen>
+    <dimen name="height_choose_edit_text">56dp</dimen>
+    <dimen name="text_size_close_text_view">18sp</dimen>
+    <dimen name="height_item_choose_from_text_view">66dp</dimen>
+    <dimen name="text_size_item_text_view">18sp</dimen>
+    <dimen name="text_size_title_country">20sp</dimen>
+    <dimen name="margin_10dp">10dp</dimen>
+    <dimen name="radius_24dp">24dp</dimen>
+    <dimen name="height_photo_hotel">168dp</dimen>
+    <dimen name="text_size_description_hotel">20sp</dimen>
+</resources>
