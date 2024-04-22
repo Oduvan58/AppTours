@@ -13,9 +13,10 @@ class ToViewHolder(parent: ViewGroup) : RecyclerView.ViewHolder(
 
     private val binding = ItemChooseToBinding.bind(itemView)
 
-    fun bind(country: Country) {
+    fun bind(country: Country, onClickItem: (Country) -> Unit) {
         with(binding) {
             titleCityCardViewTextView.text = country.name
+            cityCardView.setOnClickListener { onClickItem(country) }
         }
     }
 }

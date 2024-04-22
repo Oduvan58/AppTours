@@ -2,27 +2,32 @@ package com.example.apptours.view.home
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.apptours.R
 import com.example.apptours.app
 import com.example.apptours.databinding.ActivitySearchToursBinding
+import com.example.apptours.domain.SearchCity
+import com.example.apptours.domain.SearchCountry
 import com.example.apptours.view.listCountryFrom.ChooseFromFragment
+import com.example.apptours.view.listCountryTo.ChooseToFragment
 import com.example.apptours.view.listHotels.ListOfHotelsActivity
 import com.example.apptours.view.presenter.SearchPresenter
 import com.example.apptours.view.presenter.SearchView
 import moxy.MvpAppCompatActivity
-import moxy.ktx.moxyPresenter
 import javax.inject.Inject
 import javax.inject.Provider
 
-class SearchToursActivity : MvpAppCompatActivity(), SearchView, ChooseFromFragment.OnDataPass {
+
+class SearchToursActivity : MvpAppCompatActivity(), SearchView, ChooseFromFragment.OnDataPass,
+    ChooseToFragment.OnToDataPass {
 
     private lateinit var binding: ActivitySearchToursBinding
 
     @Inject
     lateinit var presenterProvider: Provider<SearchPresenter>
-    private val presenter by moxyPresenter { presenterProvider.get() }
+    private val presenter by lazy { presenterProvider.get() }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -37,31 +42,45 @@ class SearchToursActivity : MvpAppCompatActivity(), SearchView, ChooseFromFragme
         app.appComponent.inject(this)
         openChooseFrom()
         openChooseTo()
-        showChoice()
         findTours()
     }
 
-    private fun showChoice() {
-        TODO("Not yet implemented")
-    }
-
     private fun openChooseTo() {
-        TODO("Not yet implemented")
+        binding.inputToEditText.setOnClickListener {
+            val chooseToFragment = ChooseToFragment()
+            chooseToFragment.show(supportFragmentManager, chooseToFragment.tag)
+        }
     }
 
     private fun openChooseFrom() {
-        val chooseFromFragment = ChooseFromFragment()
-        chooseFromFragment.show(supportFragmentManager, chooseFromFragment.tag)
+        binding.inputFromEditText.setOnClickListener {
+            val chooseFromFragment = ChooseFromFragment()
+            chooseFromFragment.show(supportFragmentManager, chooseFromFragment.tag)
+        }
     }
 
     private fun findTours() {
-        startActivity(Intent(this, ListOfHotelsActivity::class.java))
+        binding.searchButton.setOnClickListener {
+            val titleCountry = presenter.getTitleCountry()
+            val intent = Intent(this, ListOfHotelsActivity::class.java)
+            intent.putExtra("TitleCountry", titleCountry)
+            startActivity(intent)
+        }
     }
 
     override fun onDataPass(city: String, departCityId: Int) {
-        var cityName = city
-        binding.inputFromEditText.setText(cityName)
+        binding.inputFromEditText.setText(city)
         presenter.setIdCity(departCityId)
+    }
+
+    override fun onToDataPass(country: String, countryId: Int) {
+        binding.inputToEditText.setText(country)
+        presenter.setIdCountry(countryId)
+        presenter.setTitleCountry(country)
+    }
+
+    override fun setSearch(searchFrom: SearchCity, searchTo: SearchCountry) {
+        Log.d("@@@", "setSearch() called")
     }
 
 }

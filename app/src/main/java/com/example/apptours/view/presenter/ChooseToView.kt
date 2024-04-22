@@ -1,13 +1,14 @@
 package com.example.apptours.view.presenter
 
-import com.example.apptours.domain.SearchCity
-import com.example.apptours.domain.SearchCountry
+import com.example.apptours.domain.City
+import com.example.apptours.domain.Country
 import moxy.MvpView
 import moxy.viewstate.strategy.AddToEndSingleStrategy
 import moxy.viewstate.strategy.StateStrategyType
 
 @StateStrategyType(value = AddToEndSingleStrategy::class)
-interface SearchView : MvpView {
+interface ChooseToView : MvpView {
 
-    fun setSearch(searchFrom: SearchCity, searchTo: SearchCountry)
+    fun getCountries(list: List<Country>)
+    fun onDismiss(country: String, countryId: Int)
 }

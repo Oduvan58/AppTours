@@ -20,7 +20,7 @@ interface OnlineToursApi {
     @GET("/api/v2/public/depart_cities")
     suspend fun getDepartCities(): List<DepartCitiesResponse>
 
-    @GET("/api/v2/public/countries")
+    @GET("/api/v2/public/regions")
     suspend fun getCountries(): List<CountriesResponse>
 
 }

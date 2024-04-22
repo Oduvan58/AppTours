@@ -4,8 +4,12 @@ import com.example.apptours.data.retrofit.Price
 import com.google.gson.annotations.SerializedName
 
 data class Tour(
-    @SerializedName("id") var id: String? = null,
-    @SerializedName("title") var title: String? = null,
-    @SerializedName("hotel_id") var hotelId: Int? = null,
-    @SerializedName("price") var price: Price? = Price(),
+    val hotelId: Int,
+    val price: Price,
+    val departCityId: Int,
+    val regionId: Int,
+    val adults: Int,
+    val startDate: String,
+    val duration: Int,
+    val originalName: String,
 )

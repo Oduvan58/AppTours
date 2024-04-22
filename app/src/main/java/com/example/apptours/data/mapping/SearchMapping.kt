@@ -8,6 +8,7 @@ import com.example.apptours.domain.City
 import com.example.apptours.domain.Country
 import com.example.apptours.domain.SearchKey
 import com.example.apptours.domain.SearchResult
+import com.example.apptours.domain.Tour
 
 fun CreateSearchResponse.toGetKey(): SearchKey = SearchKey(key)
 
@@ -24,10 +25,27 @@ fun List<CountriesResponse>.toCountry(): List<Country> =
         Country(
             id = it.id,
             name = it.name,
+            type = it.type,
+            countryName = it.countryName ?: "",
+            countryId = it.countryId ?: 0
         )
     }
 
 fun List<SearchResultResponse>.toSearchResult(): List<SearchResult> =
+    this.map {
+        SearchResult(
+            it.offer.hotelId,
+            it.offer.price,
+            it.offer.departCityId,
+            it.offer.regionId,
+            it.offer.adults,
+            it.offer.startDate,
+            it.offer.duration,
+            it.offer.originalName
+        )
+    }
+
+fun List<SearchResultResponse>.toTour(): List<SearchResult> =
     this.map {
         SearchResult(
             it.offer.hotelId,

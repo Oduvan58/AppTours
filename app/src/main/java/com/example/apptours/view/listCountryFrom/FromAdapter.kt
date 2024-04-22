@@ -12,5 +12,4 @@ class FromAdapter(private val onClickItem: (City) -> Unit) :
     override fun onBindViewHolder(holder: FromViewHolder, position: Int) {
         holder.bind(getItem(position), onClickItem)
     }
-
 }

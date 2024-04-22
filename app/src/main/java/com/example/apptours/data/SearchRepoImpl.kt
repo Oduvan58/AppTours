@@ -1,5 +1,6 @@
 package com.example.apptours.data
 
+import android.util.Log
 import com.example.apptours.data.mapping.toCity
 import com.example.apptours.data.mapping.toCountry
 import com.example.apptours.data.mapping.toGetKey

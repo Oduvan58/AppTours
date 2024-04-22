@@ -16,11 +16,8 @@
         android:theme="@style/Theme.AppTours"
         tools:targetApi="31">
         <activity
-            android:name=".view.listCountryTo.ChooseToActivity"
-            android:exported="false" />
-        <activity
             android:name=".view.listHotels.ListOfHotelsActivity"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".view.home.SearchToursActivity"
             android:exported="true">

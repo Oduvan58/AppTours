@@ -4,8 +4,9 @@ import com.example.apptours.App
 import com.example.apptours.data.retrofit.OnlineToursApi
 import com.example.apptours.view.home.SearchToursActivity
 import com.example.apptours.view.listCountryFrom.ChooseFromFragment
+import com.example.apptours.view.listCountryTo.ChooseToFragment
 import com.example.apptours.view.listHotels.ListOfHotelsActivity
-import com.example.apptours.view.presenter.SearchPresenter
+import com.example.apptours.view.presenter.HotelsPresenter
 import dagger.Component
 import javax.inject.Singleton
 
@@ -17,5 +18,7 @@ interface AppComponent {
     fun inject(searchToursActivity: SearchToursActivity)
     fun inject(listOfHotelsActivity: ListOfHotelsActivity)
     fun inject(chooseFragment: ChooseFromFragment)
+    fun inject(chooseToFragment: ChooseToFragment)
+
     fun getOnlineToursApi(): OnlineToursApi
 }
